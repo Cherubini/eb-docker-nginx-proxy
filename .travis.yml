@@ -1,0 +1,16 @@
+sudo: required
+services:
+    - docker
+    
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "tardisprojectdev-dev-tardisebsappdev"
+    env: "tardisprojectdev-dev-tardisebsenvdev"
+    bucket_name: "elasticbeanstalk-us-east-2-223278665336"
+    bucket_path: "tardisprojectdev-dev-tardisebsenvdev"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
